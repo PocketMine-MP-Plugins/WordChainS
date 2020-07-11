@@ -93,9 +93,9 @@ class WordChainS extends PluginBase implements Listener
         }
 
         $lastWord = $this->gameData ['last-word'];
-        $startingLetter = mb_substr($lastWord, 0, 1, 'utf-8');
+        $startingLetter = mb_substr($lastWord, -1, 1, 'utf-8');
 
-        if ($startingLetter !== mb_substr($writtenWord, 0, 1, 'utf-8')) {
+        if ($startingLetter !== mb_substr($writtenWord, -1, 1, 'utf-8')) {
 
             $player->sendMessage('§b§l[끝말잇기] §r§7' . $startingLetter . '(으)로 시작하는 단어여야 합니다.');
             return;
